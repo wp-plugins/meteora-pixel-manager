@@ -10,7 +10,9 @@ License URI: http://www.apache.org/licenses/LICENSE-2.0
 Easily install and manage your Meteora Pixel code.
 
 == Description ==
-Longer description.
+The Meteora pixel manager installs your pixels for you automatically. This will allow you to track all website visitors and add them to your Meteora campaigns. 
+
+Our plugin also has full support for WooCommerce and conversion tracking. Simply install the plugin, login to your Meteora account, and return to the Meteora dashboard to start your campaigns
 
 == Installation ==
 1. Install the plugin
