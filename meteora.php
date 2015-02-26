@@ -3,7 +3,7 @@
  * Plugin Name: Meteora Pixels
  * Plugin URI: http://meteora.co/pixels
  * Description: Easily integrate Meteora's Pixel code in your blog.
- * Version: 0.5
+ * Version: 2015.02.26
  * Author: Meteora
  * Author URI: http://meteora.co/
  * License: Apache-v2.0
@@ -105,24 +105,24 @@ final class Meteora {
 
 	public function addPixel() {
 		$aid = $this->opt('aid');
-		printf('<script type="text/javascript" src="//%s.meteora.us/pixel?id=%s" async="true"></script>' . PHP_EOL, $aid, $aid);
+		printf('<script type="text/javascript" src="//pixel.meteora.us/serve/%s" async="true"></script>' . PHP_EOL, $aid);
 	}
 
 	// WooComerce hooks
 	public function wooProdCB() {
-		$checked = $this->opt('wooProd') ? ' checked="checked"' : '';
-		printf('<input type="checkbox" name="meteora[wooProd]" value="1"%s>', $checked);
+		printf('<input type="checkbox" name="meteora[wooProd]" value="1"%s>', $this->checked('wooProd'));
 	}
 
 	public function wooConvCB() {
-		$checked = $this->opt('wooConv') ? ' checked="checked"' : '';
-		printf('<input type="checkbox" name="meteora[wooConv]" value="1"%s>', $checked);
+		printf('<input type="checkbox" name="meteora[wooConv]" value="1"%s>', $this->checked('wooConv'));
 	}
 
 	public function wooTrackConv() {
 		if($this->opt('wooConv') == '') return;
+	}
 
-
+	private function checked($name) {
+		return $this->opt($name) ? ' checked="checked"' : '';
 	}
 
 	private function opt($name, $def = '') {
